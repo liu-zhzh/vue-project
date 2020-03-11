@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*
+            1. 一定要画矢量图 (ai软件)
+            2. 将矢量图和一个字符绑定在一起 生成一个字体(fontlab软件)
+            3. 拿到字体之后 我们一般要对字体做一些兼容性处理
+                还帮我们生成了一个css3的自定义字体
+                    ttf ---> woff  (https://www.fontsquirrel.com/tools/webfont-generator)
+         */
+
+        /*自定义字体图标*/
+        @font-face {
+            font-family: 'bj';
+            src: url('unnamed-regular-webfont.woff2') format('woff2'),
+            url('unnamed-regular-webfont.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+    </style>
+</head>
+<body>
+    <span style="font: 300px bj">
+        b
+    </span>
+</body>
+</html>

@@ -1,0 +1,41 @@
+//遮罩的过渡动画
+.mask-enter
+  opacity 0
+.mask-enter-active
+  transition .3s opacity linear
+.mask-enter-to
+  opacity 1
+.mask-leave
+  opacity 1
+.mask-leave-active
+  transition .3s opacity linear
+.mask-leave-to
+  opacity 0
+
+//1. 并不是所有元素都可以使用动画 (内联元素是用不上动画的)
+//    animation & transtion
+//2. v-leave 這个class在整个vue的过渡是不起作用的
+//     v-leave时 到底处于什么状态  得看元素一开始处于什么位置
+
+//购物车 加减的动画
+//从隐藏 ---> 显示
+.contorlRemove-enter
+  opacity 0 !important
+  transform translateX(48px) rotate(0deg) !important
+.contorlRemove-enter-active
+  transition .5s all linear !important
+.contorlRemove-enter-to
+  opacity 1 !important
+  transform translateX(0px) rotate(-720deg) !important
+
+//   v-leave這個api完全是因为api对的对称性才会存在
+//  所以说.contorlRemove-leave 是沒有用的
+//  从显示 ---> 隐藏
+.contorlRemove-leave
+  opacity 1 !important
+  transform translate3d(0,0,0) rotate(-720deg) !important
+.contorlRemove-leave-active
+  transition .5s all linear !important
+.contorlRemove-leave-to
+  opacity 0 !important
+  transform translate3d(48px,0,0) rotate(0deg) !important
